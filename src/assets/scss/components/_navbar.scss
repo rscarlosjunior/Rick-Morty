@@ -1,0 +1,51 @@
+@import '@/assets/scss/core/_variables';
+@import '@/assets/scss/core/_colors';
+
+.header {
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,.1);
+  background: $green-soft;
+}
+
+.header__container {
+  display: flex;
+  align-items: center;
+  height: 88px;
+}
+.header__img {
+  margin-right: 3rem;
+}
+.header__logo {
+  position: relative;
+  cursor: pointer;
+}
+
+.navbar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.navbar__item {
+  margin: 0 1rem;
+}
+
+.navbar__link {
+  color: $rick-blue;
+  text-decoration: none;
+  font-size: 1.25rem;
+  padding-bottom: 28px;
+  &:hover {
+    color: $green;
+    border-bottom: 3px solid $green;
+  }
+}
+
+@media (max-width: $screen-lg) {
+  .navbar {
+    display: none;
+  }
+  .header__container {
+    justify-content: space-between
+  }
+}
