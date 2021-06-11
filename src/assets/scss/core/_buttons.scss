@@ -1,0 +1,24 @@
+.btn {
+  width: 100%;
+  margin: 0.5rem 0;
+  background: $gray-winter;
+  border-radius: 0.25rem;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: bold;
+  padding: 0.8rem;
+
+  &:focus {
+    outline: 0;
+  }
+}
+.btn--purple {
+  background: $purple-dark;
+}
+
+.btn--green {
+  background: $green;
+}
