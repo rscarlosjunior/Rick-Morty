@@ -3,7 +3,7 @@
     <div v-for="char in character" :key="char.name" class="character__item">
       <div class="character__box">
         <div class="character__img-box">
-          <img class="character_img" :src="char.image" />
+          <img class="character__img" :src="char.image" />
         </div>
         <div class="character__info">
           <h3 class="character__name">{{ char.name }}</h3>
@@ -60,9 +60,3 @@ export default {
   },
 };
 </script>
-<style lang="scss">
-img{
-  max-width: 100%;
-  max-height: 100%;
-}
-</style>
