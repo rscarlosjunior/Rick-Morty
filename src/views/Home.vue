@@ -1,14 +1,11 @@
 <template>
-  <div class="container pb-20">
-    <!-- <Characters />
-    <Episodes /> -->
+  <div>
+    <Character />
   </div>
 </template>
 
 <script>
-// import Character from '@/components/Character'
-// import Episodes from '@/components/Episodes'
-
+import Character from '@/components/Character'
 export default {
   name: 'Home',
   metaInfo: {
@@ -22,8 +19,7 @@ export default {
     }],
   },
   components: {
-    // Episodes,
-    // Character
+    Character,
   }
 }
 </script>
