@@ -1,9 +1,15 @@
 .characters {
   display: flex;
   flex-flow: wrap;
-  justify-content: space-between;
-  max-height: 450px;
+  max-height: 400px;
   overflow: scroll;
+  justify-content: flex-start;
+}
+.character__title {
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 10px;
 }
 .character__box {
   background: $white;
@@ -12,6 +18,9 @@
   display: flex;
   justify-content: space-around;
   padding: 0.7rem 0;
+}
+.character__buttons {
+  text-align: center;
 }
 .character__item {
   width: 32%;

@@ -1,6 +1,8 @@
 <template>
-  <div class="container characters pt-4">
-    <div v-for="char in getCharacters.results" :key="char.name" class="character__item">
+  <section class="container pt-4">
+  <p class="character__title"> Rick and Morty Character List </p>
+  <div class="characters">
+    <div v-for="char in getCharacters.results" :key="char.id" class="character__item">
       <div class="character__box">
         <div class="character__img-box">
           <img class="character__img" :src="char.image" />
@@ -29,11 +31,21 @@
       </button>
     </div>
   </div>
+  <div class="character__buttons">
+    <span @click="prevPage()" class="previous round">&#8249;</span>
+    <span @click="nextPage()" class="next round">&#8250;</span>
+  </div>
+  </section>
 </template>
 
 <script>
 import store from "@/store"
 export default {
+  data(){
+    return {
+      page: 1
+    }
+  },
   computed: {
     getCharacters() {
       return store.getters?.getCharacters
@@ -42,6 +54,14 @@ export default {
   methods: {
     getInfo(character) {
       return window.open(`https://rickandmorty.fandom.com/wiki/${character}`, '_blank'); //redirect for a rick and morty wikipedia made by fans.
+    },
+    nextPage(){
+      this.page = this.page + 1
+      this.$emit('setCharacters',this.page)
+    },
+    prevPage(){
+      this.page = this.page > 1 ? this.page - 1 : this.page
+      this.$emit('setCharacters',this.page)
     }
   }
 };
