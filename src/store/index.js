@@ -1,11 +1,35 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
-// todo: insert modules
-
 Vue.use(Vuex)
 
 export default new Vuex.Store({
-  modules: {
+  state: {
+    allCharacters: [],
+    allEpisodes: []
+  },
+  getters: {
+    getCharacters(state){
+      return state.allCharacters
+    },
+    getEpisodes(state){
+      return state.allEpisodes
+    },
+  },
+  mutations: {
+    setCharacters(state, character){
+        state.allCharacters = character
+    },
+    setEpisodes(state, episodes){
+      state.allEpisodes = episodes
+  },
+  },
+  actions: {
+    addCharacters({commit}, character) {
+      commit('setCharacters', character)
+    },
+    addEpisodes({commit}, episodes) {
+      commit('setEpisodes', episodes)
+    },
   }
 })
