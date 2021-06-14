@@ -17,7 +17,7 @@
             <button
               :class="['btn character__btn desktop',{'btn--green': char.name,},]"
             >
-              <span> More information</span>
+              <span @click="getInfo(char.name)"> More information</span>
             </button>
           </div>
         </div>
@@ -25,7 +25,7 @@
       <button
         :class="['btn character__btn mobile',{'btn--green': char.name,},]"
       >
-        <span> More information</span>
+        <span @click="getInfo(char.name)"> More information</span>
       </button>
     </div>
   </div>
@@ -37,6 +37,11 @@ export default {
   computed: {
     getCharacters() {
       return store.getters?.getCharacters
+    }
+  },
+  methods: {
+    getInfo(character) {
+      return window.open(`https://rickandmorty.fandom.com/wiki/${character}`, '_blank'); //redirect for a rick and morty wikipedia made by fans.
     }
   }
 };
