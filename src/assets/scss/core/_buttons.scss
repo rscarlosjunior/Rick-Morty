@@ -22,3 +22,17 @@
 .btn--green:hover {
   background: $gray-hiper;
 }
+
+.previous,.next {
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 16px;
+  margin: 5px;
+  background: $black;
+  color: $white;
+  border-radius: 5px;;
+}
+
+.previous:hover, .next:hover {
+  background-color: $green;
+}
