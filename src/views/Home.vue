@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Character />
+    <Character @setCharacters="getPaginationCharacters" />
   </div>
 </template>
 
@@ -29,6 +29,13 @@ export default {
     this.setEpisodes()
   },
   methods: {
+    getPaginationCharacters(page) {
+      return api.getPaginationCharacters(page)
+      .then(response => response.data)
+      .then(data => {
+        store.dispatch("addCharacters",data)
+      })
+    },
     setCharacters() {
       return api.getCharacters()
       .then(response => response.data)
