@@ -32,7 +32,7 @@
     </div>
   </div>
   <div class="character__buttons">
-    <span @click="prevPage()" class="previous round">&#8249;</span>
+    <span @click="prevPage()" class="previous round" :class="{'disabled': disable }">&#8249;</span>
     <span @click="nextPage()" class="next round">&#8250;</span>
   </div>
   </section>
@@ -40,16 +40,25 @@
 
 <script>
 import store from "@/store"
+import { getPaginationCharacters, setCharacters, setEpisodes } from '@/assets/js/utils/apiCaller'
+
 export default {
   data(){
     return {
-      page: 1
+      page: 1,
     }
   },
   computed: {
     getCharacters() {
       return store.getters?.getCharacters
+    },
+    disable() {
+      return this.page <= 1
     }
+  },
+  created() {
+    setCharacters()
+    setEpisodes()
   },
   methods: {
     getInfo(character) {
@@ -57,11 +66,11 @@ export default {
     },
     nextPage(){
       this.page = this.page + 1
-      this.$emit('setCharacters',this.page)
+      getPaginationCharacters(this.page)
     },
     prevPage(){
       this.page = this.page > 1 ? this.page - 1 : this.page
-      this.$emit('setCharacters',this.page)
+      getPaginationCharacters(this.page)
     }
   }
 };
