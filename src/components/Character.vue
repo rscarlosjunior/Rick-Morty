@@ -2,9 +2,9 @@
   <section class="container pt-4">
   <p class="character__title"> Rick and Morty Character List </p>
   <div class="character__search-box">
-    <input type="text" class="character__search" placeholder="The name is here">
+    <input type="text" v-model="character_name" class="character__search" placeholder="The name is here">
     <button class="character__search-btn desktop'">
-      <span @click="getCharByName(char.name)">Find your Character</span>
+      <span @click="getCharByName(character_name)">Find your Character</span>
     </button>
   </div>
   <div class="characters">
@@ -46,12 +46,13 @@
 
 <script>
 import store from "@/store"
-import { getPaginationCharacters, setCharacters, setEpisodes } from '@/assets/js/utils/apiCaller'
+import { getPaginationCharacters, setCharacters, setEpisodes, getCharactersByName } from '@/assets/js/utils/apiCaller'
 
 export default {
   data(){
     return {
       page: 1,
+      character_name: ''
     }
   },
   computed: {
@@ -69,6 +70,9 @@ export default {
   methods: {
     getInfo(character) {
       return window.open(`https://rickandmorty.fandom.com/wiki/${character}`, '_blank'); //redirect for a rick and morty wikipedia made by fans.
+    },
+    getCharByName(name) {
+      getCharactersByName(name)
     },
     nextPage(){
       this.page = this.page + 1
