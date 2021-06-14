@@ -5,7 +5,7 @@
       <div class="container header__container">
         <h1 class="header__img">
           <a href="#">
-            <img src="../assets/img/logo-ph.png" width="100" height="85" alt="Rick">
+            <img src="../assets/img/logo-rm.png" width="100" height="85" alt="Rick">
           </a>
         </h1>
         <ul class="navbar">
@@ -13,9 +13,6 @@
             <a class="navbar__link" @click="goTo(item.title)" :href="item.link">{{ item.title }}</a>
           </li>
         </ul>
-        <div class="header__logo">
-          <img src="../assets/img/logo-ph.png" width="100" height="85" alt="Rick and Morty Logo">
-        </div>
       </div>
     </header>
   </div>
