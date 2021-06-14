@@ -1,5 +1,5 @@
 <template>
-  <div v-if="!loading" class="container episodes pt-4">
+  <div class="container episodes pt-4">
     <table>
       <thead class="episodes">
         <th scope="col">Episode</th>
