@@ -1,14 +1,11 @@
 <template>
   <div>
-    <Character @setCharacters="getPaginationCharacters" />
+    <Character />
   </div>
 </template>
 
 <script>
-import {api} from '@/services/API'
-import store from '@/store/index'
 import Character from '@/components/Character'
-
 export default {
   name: 'Home',
   metaInfo: {
@@ -24,32 +21,5 @@ export default {
   components: {
     Character,
   },
-  created(){
-    this.setCharacters()
-    this.setEpisodes()
-  },
-  methods: {
-    getPaginationCharacters(page) {
-      return api.getPaginationCharacters(page)
-      .then(response => response.data)
-      .then(data => {
-        store.dispatch("addCharacters",data)
-      })
-    },
-    setCharacters() {
-      return api.getCharacters()
-      .then(response => response.data)
-      .then(data => {
-        store.dispatch("addCharacters",data)
-      })
-    },
-    setEpisodes() {
-      return api.getEpisodes()
-      .then(response => response.data)
-      .then(data => {
-        store.dispatch("addEpisodes",data)
-      })
-    }
-  }
 }
 </script>
