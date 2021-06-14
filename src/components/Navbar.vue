@@ -4,7 +4,7 @@
     <header class="header">
       <div class="container header__container">
         <h1 class="header__img">
-          <a href="#">
+          <a href="/">
             <img src="../assets/img/logo-rm.png" width="100" height="85" alt="Rick">
           </a>
         </h1>
