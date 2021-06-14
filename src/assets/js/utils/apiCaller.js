@@ -9,7 +9,7 @@ const getPaginationCharacters = (page) => {
   })
 }
 const getCharactersByName = (name) => {
-  return api.getPaginationCharacters(name)
+  return api.getCharactersByName(name)
   .then(response => response.data)
   .then(data => {
     store.dispatch("addCharacters",data)
