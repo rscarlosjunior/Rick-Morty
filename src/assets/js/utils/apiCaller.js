@@ -8,6 +8,13 @@ const getPaginationCharacters = (page) => {
     store.dispatch("addCharacters",data)
   })
 }
+const getCharactersByName = (name) => {
+  return api.getPaginationCharacters(name)
+  .then(response => response.data)
+  .then(data => {
+    store.dispatch("addCharacters",data)
+  })
+}
 const setCharacters = () => {
   return api.getCharacters()
   .then(response => response.data)
@@ -23,4 +30,4 @@ const setEpisodes = () => {
   })
 }
 
-export {getPaginationCharacters, setCharacters, setEpisodes }
+export {getPaginationCharacters, getCharactersByName, setCharacters, setEpisodes }

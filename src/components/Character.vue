@@ -1,6 +1,12 @@
 <template>
   <section class="container pt-4">
   <p class="character__title"> Rick and Morty Character List </p>
+  <div class="character__search-box">
+    <input type="text" class="character__search" placeholder="The name is here">
+    <button class="character__search-btn desktop'">
+      <span @click="getCharByName(char.name)">Find your Character</span>
+    </button>
+  </div>
   <div class="characters">
     <div v-for="char in getCharacters.results" :key="char.id" class="character__item">
       <div class="character__box">

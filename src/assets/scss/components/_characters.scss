@@ -24,7 +24,7 @@
 }
 .character__item {
   width: 32%;
-  margin: 5px;
+  margin: 5px 5px 5px 0;
 }
 .character__img-box {
   max-width: 50%;
@@ -66,7 +66,22 @@
     display: none;
   }
 }
-
+.character__search {
+  padding: 6px;
+  margin-right: 16px;
+  font-size: 17px;  
+}
+.character__search-btn {
+  background: $black;
+  border-radius: 0.25rem;
+  border: none;
+  color: $white;
+  cursor: pointer;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: bold;
+  padding: 0.8rem;
+}
 // Media queries to medium devices less then 960px
 @media (max-width: $screen-lg) {
   .character__info {
