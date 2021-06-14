@@ -6,5 +6,6 @@ const axiosInstance = axios.create({
 
 export const api = {
     getCharacters: () => axiosInstance.get('/character'),
+    getPaginationCharacters: (page) => axiosInstance.get(`/character/?page=${page}`),
     getEpisodes: () => axiosInstance.get('/episode')
 }
