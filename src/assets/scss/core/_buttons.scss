@@ -31,8 +31,13 @@
   background: $black;
   color: $white;
   border-radius: 5px;;
+  cursor: pointer;
 }
 
 .previous:hover, .next:hover {
   background-color: $green;
+}
+.disabled {
+  cursor: not-allowed;
+  background-color: $gray-winter !important;
 }
