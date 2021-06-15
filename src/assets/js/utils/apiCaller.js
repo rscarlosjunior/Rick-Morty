@@ -22,12 +22,18 @@ const setCharacters = () => {
     store.dispatch("addCharacters",data)
   })
 }
-const setEpisodes = () => {
-  return api.getEpisodes()
+const setEpisodes = (number) => {
+  return api.getEpisodes(number)
   .then(response => response.data)
   .then(data => {
     store.dispatch("addEpisodes",data)
   })
 }
-
-export {getPaginationCharacters, getCharactersByName, setCharacters, setEpisodes }
+const getPaginationEpisodes = (page) => {
+  return api.getPaginationEpisodes(page)
+  .then(response => response.data)
+  .then(data => {
+    store.dispatch("addEpisodes",data)
+  })
+}
+export {getPaginationCharacters, getCharactersByName, setCharacters, setEpisodes,getPaginationEpisodes }
