@@ -37,6 +37,9 @@
 .previous:hover, .next:hover {
   background-color: $green;
 }
+.step__buttons {
+  text-align: center;
+}
 .disabled {
   cursor: not-allowed;
   background-color: $gray-winter !important;
