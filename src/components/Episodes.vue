@@ -3,7 +3,7 @@
     <search
       @iniciatedSearch="getSingleEpisode"
       title="RICK AND MORTY EPISODE LIST"
-      placeholder="The eps is here"
+      placeholder="Search Episode by id"
       finder="Find your episode"
     />
     <div class="episode">
@@ -14,15 +14,19 @@
           <th scope="col">Air Date</th>
           <th scope="col">Characters</th>
         </thead>
-        <tbody>
+        <tbody v-if="countResult">
           <tr v-for="items in getResult" :key="items.id">
-            <td scope="row" data-label="Episode">
-              {{ items.episode || getResult.episode }}
-            </td>
-            <td data-label="Name">{{ items.name || getResult.name }}</td>
-            <td data-label="Air Date">
-              {{ items.air_date || getResult.air_date }}
-            </td>
+            <td scope="row" data-label="Episode"> {{ items.id }}</td>
+            <td data-label="Name">{{ items.name }}</td>
+            <td data-label="Air Date">{{ items.air_date }}</td>
+            <!-- <td data-label="Characters">{{eps.characters}}<a class="table__info" @click="getCharactersInformation(eps.name)"> and more</a></td> -->
+          </tr>
+        </tbody>
+        <tbody v-else>
+          <tr>
+            <td scope="row" data-label="Episode"> {{ getResult.id }}</td>
+            <td data-label="Name">{{ getResult.name }}</td>
+            <td data-label="Air Date">{{ getResult.air_date }}</td>
             <!-- <td data-label="Characters">{{eps.characters}}<a class="table__info" @click="getCharactersInformation(eps.name)"> and more</a></td> -->
           </tr>
         </tbody>
@@ -62,6 +66,9 @@ export default {
     },
     getResult() {
       return this.getEpisodes ? this.getEpisodes : store.getters?.getEpisodes;
+    },
+    countResult() {
+      return this.getResult.length > 1 || this.getEpisodes
     },
     disable() {
       return this.page <= 1;
