@@ -19,8 +19,8 @@ export default {
       items: [
         { title: 'Characters'},
         { title: 'Episodes'},
-        { title: 'Community', link:'#'},
-        { title: 'More', link: '#'}
+        { title: 'Community', link:'https://rickandmorty.fandom.com/wiki/Rick_and_Morty_Wiki:Community_Portal'},
+        { title: 'API Documentation', link: 'https://rickandmortyapi.com/'}
         ]
     }
   },
