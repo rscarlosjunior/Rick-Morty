@@ -6,6 +6,7 @@
         type="text"
         v-model="params"
         class="search__input"
+        @keyup.enter="getSearch(params)"
         :placeholder="placeholder"
       />
       <button class="search__input-btn desktop'">
