@@ -8,7 +8,7 @@
     />
     <div class="characters">
       <div
-        v-for="char in getCharacters.results"
+        v-for="char in setList"
         :key="char.id"
         class="character__item"
       >
@@ -64,12 +64,12 @@
 </template>
 
 <script>
-import store from "@/store";
 import Search from "./Search";
 import StepButtons from "./stepButtons";
 import {
   getPaginationCharacters,
   setCharacters,
+  setEpisodeCharacters,
   getCharactersByName,
 } from "@/assets/js/utils/apiCaller";
 
@@ -84,7 +84,13 @@ export default {
   },
   computed: {
     getCharacters() {
-      return store.getters?.getCharacters;
+      return this.$store.getters.getCharacters;
+    },
+    setList(){
+      return this.getCharacters.results ? this.getCharacters.results : this.getCharacters
+    },
+    getEpisodeCharacters() {
+      return this.$store.getters?.getEpisodeCharacter;
     },
     disable() {
       return this.page <= 1;
@@ -92,8 +98,13 @@ export default {
   },
   created() {
     setCharacters();
+    this.searchForEpisodeCharacters();
   },
   methods: {
+    searchForEpisodeCharacters(){
+      const arr = this.getEpisodeCharacters.map(i=>Number(i));
+      return this.getEpisodeCharacters? setEpisodeCharacters(arr) : ''
+    },
     getInfo(character) {
       return window.open(
         `https://rickandmorty.fandom.com/wiki/${character}`,

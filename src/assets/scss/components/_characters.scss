@@ -63,7 +63,9 @@
     display: none;
   }
 }
-
+.information-box {
+  padding-right: 10px;
+}
 // Media queries to medium devices less then 960px
 @media (max-width: $screen-lg) {
   .character__info {
