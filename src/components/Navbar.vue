@@ -7,8 +7,8 @@
           <a href="/">
             <img
               src="../assets/img/logo-rm.png"
-              width="100"
-              height="85"
+              width="200"
+              height="185"
               alt="Rick"
             />
           </a>
