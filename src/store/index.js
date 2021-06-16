@@ -6,7 +6,8 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     allCharacters: [],
-    allEpisodes: []
+    allEpisodes: [],
+    allCharacterEpisode: []
   },
   getters: {
     getCharacters(state){
@@ -15,6 +16,9 @@ export default new Vuex.Store({
     getEpisodes(state){
       return state.allEpisodes
     },
+    getEpisodeCharacter(state){
+      return state.allCharacterEpisode
+    },
   },
   mutations: {
     setCharacters(state, character){
@@ -22,7 +26,10 @@ export default new Vuex.Store({
     },
     setEpisodes(state, episodes){
       state.allEpisodes = episodes
-  },
+    },
+    setEpisodeCharacter(state, epsChar){
+      state.allCharacterEpisode = epsChar
+    },
   },
   actions: {
     addCharacters({commit}, character) {
@@ -31,5 +38,9 @@ export default new Vuex.Store({
     addEpisodes({commit}, episodes) {
       commit('setEpisodes', episodes)
     },
+    addEpisodeCharacter({commit}, epsChar) {
+      commit('setEpisodeCharacter', epsChar)
+    },
+
   }
 })
