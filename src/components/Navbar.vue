@@ -2,7 +2,7 @@
   <div>
     <!-- Horizontal Navbar -->
     <header class="header">
-      <div class="container header__container">
+      <div class="header__container">
         <h1 class="header__img">
           <a href="/">
             <img
