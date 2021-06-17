@@ -3,7 +3,7 @@
     <a href="#" class="banner__link">
       <picture>
         <source
-          srcset="../assets/img/rm-mobile.jpg"
+          srcset="../assets/img/rm-mobile2.jpg"
           media="(max-width: 992px)"
           class="banner__img"
         />
