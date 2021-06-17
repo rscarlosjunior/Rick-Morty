@@ -1,6 +1,7 @@
 <template>
   <section>
     <p class="search__title">{{ title }}</p>
+    <p class="search__subtitle" @click="goTo()">{{ subtitle }}</p>
     <div class="search__box">
       <input
         type="text"
@@ -21,6 +22,8 @@ export default {
   props: {
     title: { type: String },
     finder: { type: String },
+    subtitle: {type: String },
+    character: {type: Boolean , default: false},
     placeholder: { type: String },
   },
   data() {
@@ -32,6 +35,9 @@ export default {
     getSearch(params) {
       this.$emit("iniciatedSearch", params);
     },
+    goTo(){
+      return this.character ? this.$router.push('/episodes') : this.$router.push('/characters')
+    }
   },
 };
 </script>

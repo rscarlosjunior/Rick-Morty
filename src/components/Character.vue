@@ -3,6 +3,8 @@
     <search
       @iniciatedSearch="getCharByName"
       title="Rick and Morty Character List"
+      subtitle="or click here to see the Episode List"
+      :character="true"
       placeholder="The name is here"
       finder="Find your Character"
     />

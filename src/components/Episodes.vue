@@ -3,6 +3,7 @@
     <search
       @iniciatedSearch="getSingleEpisode"
       title="RICK AND MORTY EPISODE LIST"
+      subtitle="or click here to see all Characters"
       placeholder="Type the number of Eps"
       finder="Find your episode"
     />
