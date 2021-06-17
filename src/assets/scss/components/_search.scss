@@ -33,7 +33,11 @@
 .search__box{
     margin-bottom: 5px;
 }
-
+@media (min-width: $screen-lg) {
+    .search__subtitle {
+        display: none;
+    }
+}
 // Media queries to small devices less then 720px
 @media (max-width: $screen-md) {
     .search__box{
@@ -43,5 +47,10 @@
     .search__input,.search__input-btn{
         font-size: 12px;
         width: 45%;
+    }
+    .search__subtitle {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 10px;
     }
 }
