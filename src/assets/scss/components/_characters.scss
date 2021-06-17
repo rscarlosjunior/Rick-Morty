@@ -16,7 +16,7 @@
 }
 .character__box {
   background: $white;
-  box-shadow: 0 2px 5px rgba(0,0,0,.05);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
   max-height: 200px;
   display: flex;
   justify-content: space-around;
@@ -47,7 +47,7 @@
 }
 .character__customer {
   margin: 0.7rem 0 0.2rem 0;
-  color: #1D1D1B;
+  color: #1d1d1b;
   display: block;
   font-size: 0.625rem;
   font-weight: 700;
@@ -113,7 +113,7 @@
     border: 1px solid $black;
     border-radius: 5px;
   }
-  .character__img-box{
+  .character__img-box {
     max-width: 100%;
   }
   .character__spacing {

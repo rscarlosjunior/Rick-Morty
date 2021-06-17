@@ -22,8 +22,8 @@ export default {
   props: {
     title: { type: String },
     finder: { type: String },
-    subtitle: {type: String },
-    character: {type: Boolean , default: false},
+    subtitle: { type: String },
+    character: { type: Boolean, default: false },
     placeholder: { type: String },
   },
   data() {
@@ -35,9 +35,11 @@ export default {
     getSearch(params) {
       this.$emit("iniciatedSearch", params);
     },
-    goTo(){
-      return this.character ? this.$router.push('/episodes') : this.$router.push('/characters')
-    }
+    goTo() {
+      return this.character
+        ? this.$router.push("/episodes")
+        : this.$router.push("/characters");
+    },
   },
 };
 </script>

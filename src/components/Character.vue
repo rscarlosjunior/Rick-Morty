@@ -87,10 +87,12 @@ export default {
   },
   computed: {
     getCharacters() {
-      return this.$store.getters?.getCharacters
+      return this.$store.getters?.getCharacters;
     },
-    setList(){
-      return this.getCharacters.results ? this.getCharacters.results : this.getCharacters
+    setList() {
+      return this.getCharacters.results
+        ? this.getCharacters.results
+        : this.getCharacters;
     },
     getEpisodeCharacters() {
       return this.$store.getters?.getEpisodeCharacter;
@@ -104,9 +106,9 @@ export default {
     this.searchForEpisodeCharacters();
   },
   methods: {
-    searchForEpisodeCharacters(){
-      const arr = this.getEpisodeCharacters.map(i=>Number(i));
-      return this.getEpisodeCharacters? setEpisodeCharacters(arr) : ''
+    searchForEpisodeCharacters() {
+      const arr = this.getEpisodeCharacters.map((i) => Number(i));
+      return this.getEpisodeCharacters ? setEpisodeCharacters(arr) : "";
     },
     getInfo(character) {
       return window.open(
