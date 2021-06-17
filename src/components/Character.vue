@@ -1,5 +1,5 @@
 <template>
-  <section class="container pt-4">
+  <section class="container character__spacing">
     <search
       @iniciatedSearch="getCharByName"
       title="Rick and Morty Character List"

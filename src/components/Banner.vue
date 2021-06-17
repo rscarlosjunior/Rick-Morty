@@ -1,9 +1,9 @@
 <template>
-  <div class="container banner pt-1">
+  <div class="banner pt-1">
     <a href="#" class="banner__link">
       <picture>
         <source
-          srcset="../assets/img/banner.png"
+          srcset="../assets/img/rm-mobile.jpg"
           media="(max-width: 992px)"
           class="banner__img"
         />
