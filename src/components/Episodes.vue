@@ -15,8 +15,8 @@
           <th scope="col">Characters</th>
         </thead>
         <tbody v-if="countResult">
-          <tr v-for="items in getResult" :key="items.id">
-            <td scope="row" data-label="Episode"> {{ items.id }}</td>
+          <tr v-for="items in getResult" data-test="episode" :key="items.id">
+            <td scope="row" data-test="id" data-label="Episode"> {{ items.id }}</td>
             <td data-label="Name">{{ items.name }}</td>
             <td data-label="Air Date">{{ items.air_date }}</td>
             <td data-label="Characters"><a class="table__info" @click="getCharactersInEpisode(items.characters)">See all</a></td>
@@ -24,7 +24,7 @@
         </tbody>
         <tbody v-else>
           <tr>
-            <td scope="row" data-label="Episode"> {{ getResult.id }}</td>
+            <td scope="row" data-test="id" data-label="Episode"> {{ getResult.id }}</td>
             <td data-label="Name">{{ getResult.name }}</td>
             <td data-label="Air Date">{{ getResult.air_date }}</td>
             <td data-label="Characters"><a class="table__info" @click="getCharactersInEpisode(getResult.characters)">See all</a></td>
