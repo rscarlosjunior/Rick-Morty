@@ -10,6 +10,7 @@
       <div
         v-for="char in setList"
         :key="char.id"
+        data-test="character"
         class="character__item"
       >
         <div class="character__box">
@@ -84,7 +85,7 @@ export default {
   },
   computed: {
     getCharacters() {
-      return this.$store.getters.getCharacters;
+      return this.$store.getters?.getCharacters
     },
     setList(){
       return this.getCharacters.results ? this.getCharacters.results : this.getCharacters
