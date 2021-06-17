@@ -1,24 +1,27 @@
-# rm
+# Rick and Morty Wikipedia Project
 
-## Project setup
+made with:
+
+```
+- vue
+- vuex
+- vue-router
+- axios
+- sass/scss
+- jest
+```
+
+Run the project with:
 ```
 npm install
-```
-
-### Compiles and hot-reloads for development
-```
 npm run serve
-```
-
-### Compiles and minifies for production
-```
 npm run build
 ```
-
-### Run your unit tests
+Run the tests with: 
 ```
 npm run test:unit
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+API DOCUMENTATION : https://rickandmortyapi.com/
+
+_design and layout made by me._
