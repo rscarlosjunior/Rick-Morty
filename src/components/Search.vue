@@ -20,11 +20,14 @@
 export default {
   name: "Search",
   props: {
-    title: { type: String },
-    finder: { type: String },
-    subtitle: { type: String },
-    character: { type: Boolean, default: false },
-    placeholder: { type: String },
+    title: String,
+    finder: String,
+    subtitle: String,
+    placeholder: String,
+    character: {
+      type: Boolean,
+      default: false,
+    },
   },
   data() {
     return {
