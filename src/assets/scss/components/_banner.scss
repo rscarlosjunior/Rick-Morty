@@ -3,11 +3,10 @@
   margin: 0 auto;
   max-width: 1140px;
   width: 90%;
+  &__img {
+    max-width: 100%;
+  }
 }
-.banner__img {
-  max-width: 100%;
-}
-// Media queries to small devices less then 720px
 @media (max-width: $screen-md) {
   .banner {
     width: 100%;

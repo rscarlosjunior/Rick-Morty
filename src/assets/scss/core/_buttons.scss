@@ -1,10 +1,19 @@
+.step {
+  text-align: center;
+}
+
+.disabled {
+  cursor: not-allowed;
+  background-color: $gray-winter !important;
+}
+
 .btn {
   width: 100%;
   margin: 0.5rem 0;
   background: $gray-winter;
   border-radius: 0.25rem;
   border: none;
-  color: #fff;
+  color: $white;
   cursor: pointer;
   font-size: 0.75rem;
   font-style: normal;
@@ -14,13 +23,13 @@
   &:focus {
     outline: 0;
   }
-}
 
-.btn--green {
-  background: $green;
-}
-.btn--green:hover {
-  background: $gray-hiper;
+  &__green {
+    background: $green;
+  }
+  &__green:hover {
+    background: $gray-hiper;
+  }
 }
 
 .previous,
@@ -33,16 +42,8 @@
   color: $white;
   border-radius: 5px;
   cursor: pointer;
-}
 
-.previous:hover,
-.next:hover {
-  background-color: $green;
-}
-.step__buttons {
-  text-align: center;
-}
-.disabled {
-  cursor: not-allowed;
-  background-color: $gray-winter !important;
+  &:hover {
+    background-color: $green;
+  }
 }

@@ -5,87 +5,81 @@ table {
   padding: 0;
   width: 100%;
   table-layout: fixed;
+  caption {
+    font-size: 1.5em;
+    margin: 0.5em 0 0.75em;
+  }
+  tr {
+    border: 1px solid $gray-winter;
+    padding: 0.35em;
+  }
+  th,
+  td {
+    padding: 0.625em;
+    background-color: $white;
+    vertical-align: middle;
+    text-align: center;
+  }
+  th {
+    font-size: 0.85em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
 }
 
-table caption {
-  font-size: 1.5em;
-  margin: 0.5em 0 0.75em;
-}
-
-table tr {
-  border: 1px solid $gray-winter;
-  padding: 0.35em;
-}
-
-table th,
-table td {
-  padding: 0.625em;
-  background-color: $white;
-  vertical-align: middle;
-  text-align: center;
-}
-
-table th {
-  font-size: 0.85em;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-.table__info {
-  color: $green;
-  text-decoration: solid;
-  cursor: pointer;
-}
-.table__info:hover {
-  color: $gray-medium;
-  text-decoration: solid;
-  cursor: pointer;
+.table {
+  &__info {
+    color: $green;
+    text-decoration: solid;
+    cursor: pointer;
+  }
+  &:hover {
+    color: $gray-medium;
+    text-decoration: solid;
+    cursor: pointer;
+  }
 }
 .episode {
   max-height: 400px;
   overflow: scroll;
   background-color: $white;
 }
-@media screen and (max-width: 600px) {
+
+@media screen and (max-width: $screen-lg) {
   table {
     border: 0;
-  }
-
-  table caption {
-    font-size: 1.3em;
-  }
-
-  table thead {
-    border: none;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
-  }
-
-  table tr {
-    border-bottom: 3px solid #ddd;
-    display: block;
-    margin-bottom: 0.625em;
-  }
-
-  table td {
-    border-bottom: 1px solid #ddd;
-    display: block;
-    font-size: 0.8em;
-    text-align: right;
-  }
-
-  table td::before {
-    content: attr(data-label);
-    float: left;
-    font-weight: bold;
-    text-transform: uppercase;
-  }
-
-  table td:last-child {
-    border-bottom: 0;
+    caption {
+      font-size: 1.3em;
+    }
+    thead {
+      border: none;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 1px;
+    }
+    tr {
+      border-bottom: 3px solid #ddd;
+      display: block;
+      margin-bottom: 0.625em;
+    }
+    td {
+      border-bottom: 1px solid #ddd;
+      display: block;
+      font-size: 0.8em;
+      text-align: right;
+      &::before {
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+      &:last-child {
+        border-bottom: 0;
+      }
+    }
   }
 }

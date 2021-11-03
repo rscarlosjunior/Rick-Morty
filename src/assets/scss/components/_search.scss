@@ -1,57 +1,64 @@
-.search__title {
-  text-align: center;
-  font-weight: bold;
-  text-transform: uppercase;
-  padding: 10px;
+.search {
+  &__title {
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 10px;
+  }
+  &__input {
+    padding: 8px;
+    border-radius: 5px;
+    margin-right: 16px;
+    font-size: 17px;
+    border: 1px solid $black;
+    &-btn {
+      background: $black;
+      border-radius: 0.25rem;
+      border: none;
+      color: $white;
+      cursor: pointer;
+      font-size: 0.75rem;
+      font-style: normal;
+      font-weight: bold;
+      padding: 0.8rem;
+      &:hover {
+        background-color: $green;
+      }
+    }
+    &:focus {
+      outline: none !important;
+      border: 1px solid $green;
+      box-shadow: 0 0 10px $green-soft;
+    }
+  }
+  &__box {
+    margin-bottom: 5px;
+  }
 }
-.search__input {
-  padding: 8px;
-  border-radius: 5px;
-  margin-right: 16px;
-  font-size: 17px;
-  border: 1px solid $black;
-}
-.search__input:focus {
-  outline: none !important;
-  border: 1px solid $green;
-  box-shadow: 0 0 10px $green-soft;
-}
-.search__input-btn {
-  background: $black;
-  border-radius: 0.25rem;
-  border: none;
-  color: $white;
-  cursor: pointer;
-  font-size: 0.75rem;
-  font-style: normal;
-  font-weight: bold;
-  padding: 0.8rem;
-}
-.search__input-btn:hover {
-  background-color: $green;
-}
-.search__box {
-  margin-bottom: 5px;
-}
+
 @media (min-width: $screen-lg) {
-  .search__subtitle {
-    display: none;
+  .search {
+    &__subtitle {
+      display: none;
+    }
   }
 }
 // Media queries to small devices less then 720px
 @media (max-width: $screen-md) {
-  .search__box {
-    display: flex;
-    justify-content: space-between;
-  }
-  .search__input,
-  .search__input-btn {
-    font-size: 12px;
-    width: 45%;
-  }
-  .search__subtitle {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 10px;
+  .search {
+    &__box {
+      display: flex;
+      justify-content: space-between;
+    }
+    &__input,
+    &__input-btn {
+      font-size: 12px;
+      width: 45%;
+    }
+    &__subtitle {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 10px;
+    }
   }
 }
