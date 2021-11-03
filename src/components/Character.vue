@@ -8,7 +8,7 @@
       placeholder="The name is here"
       finder="Find your Character"
     />
-    <div class="characters">
+    <div class="character">
       <div
         v-for="char in setList"
         :key="char.id"
@@ -43,7 +43,7 @@
               <button
                 :class="[
                   'btn character__btn desktop',
-                  { 'btn--green': char.name },
+                  { 'btn__green': char.name },
                 ]"
               >
                 <span @click="getInfo(char.name)"> More information</span>
@@ -52,7 +52,7 @@
           </div>
         </div>
         <button
-          :class="['btn character__btn mobile', { 'btn--green': char.name }]"
+          :class="['btn character__btn mobile', { 'btn__green': char.name }]"
         >
           <span @click="getInfo(char.name)"> More information</span>
         </button>
